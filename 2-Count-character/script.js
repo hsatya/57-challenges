@@ -8,8 +8,12 @@ const out = document.getElementById("out2");
 
 function totalCount() {
   const count = input.value;
-  output.innerHTML = `The length of the senetence is ${count.length}`;
-  input.value = "";
+  if (count.length === 0) {
+    output.innerHTML = "You must enter something.";
+  } else {
+    output.innerHTML = `${count} has ${count.length} characters.`;
+    input.value = "";
+  }
 }
 
 let st = "";
@@ -21,7 +25,7 @@ input.addEventListener("keypress", (e) => {
     st = "";
   } else {
     st += e.key;
-    out.innerHTML = st;
+    out.innerHTML = `Number of characters count: ${st.length}`;
   }
 });
 
