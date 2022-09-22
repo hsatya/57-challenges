@@ -73,4 +73,3 @@ const getInputValues = () => {
 
 btn1.addEventListener("click", getInputValues);
 btn2.addEventListener("click", clearInput);
-// option.addEventListener("click", handleAreaChangeHandler);
