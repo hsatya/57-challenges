@@ -1,3 +1,3 @@
-# 57-challenges
+# 57-challenges with Go
 
 ## 1 - Saying Hello
