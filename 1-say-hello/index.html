@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <label for="username">What is your name? </label>
+      <input type="text" id="username" />
+    </form>
+    <p id="output"></p>
+  </body>
+  <script>
+    const greetings = [
+      "Hello!",
+      "Hi there!",
+      "Hey!",
+      "Greetings!",
+      "Good day!",
+      "Salutations!",
+      "Howdy!",
+      "Yo!",
+      "Hiya!",
+      "What's up!",
+      "Hola!",
+      "Bonjour!",
+      "Ciao!",
+      "Namaste!",
+      "Ahoy!",
+      "G'day mate!",
+      "Shalom!",
+      "Kon'nichiwa!",
+      "Hallo!",
+      "Salaam!",
+      "Sup!",
+      "Aloha!",
+      "Hej!",
+      "Privet!",
+      "Konnichiwa!",
+      "Selamat pagi!",
+      "Guten Tag!",
+      "Namaskar!",
+      "Hei!",
+      "Sawubona!",
+    ];
+    const output = document.querySelector("#output");
+    function handleSubmit(e) {
+      e.preventDefault();
+      const num = Math.floor(Math.random() * greetings.length);
+      let name = username.value;
+      output.innerHTML = `${greetings[num]}, ${name}, nice to meet you!`;
+    }
+    function handleInput(e) {
+      if (e.target.value === "") {
+        output.innerHTML = "";
+      }
+    }
+    const username = document.querySelector("#username");
+    const form = document.addEventListener("submit", handleSubmit);
+    username.addEventListener("input", handleInput);
+    if (username.value === "") {
+      output.innerHTML = "";
+    }
+  </script>
+</html>
