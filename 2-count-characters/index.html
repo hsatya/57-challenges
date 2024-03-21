@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Character Counter</title>
+    <style>
+      body {
+        background-color: rgb(20, 19, 19);
+        color: whitesmoke;
+      }
+      h1 {
+        text-align: center;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Character Counter</h1>
+    <div class="container">
+      <!-- <form id="form"> -->
+      <div>
+        <label for="username">What is the input string? </label>
+        <input type="text" id="username" />
+      </div>
+      <!-- </form> -->
+      <p id="output"></p>
+    </div>
+    <script>
+      const output = document.querySelector("#output");
+      const username = document.querySelector("#username");
+
+      function handleInput(e) {
+        const letters = e.target.value;
+        if (letters.length > 0) {
+          output.innerHTML = `${letters} has ${letters.length} characters.`;
+        } else {
+          output.innerHTML = "";
+        }
+      }
+
+      username.addEventListener("input", handleInput);
+    </script>
+  </body>
+</html>
