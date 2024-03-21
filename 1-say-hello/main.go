@@ -7,6 +7,6 @@ func main() {
 	fmt.Print("What is your name? ");
 	fmt.Scan(&username);
 	message := "Hello, " + username + ", nice to meet you!"; 
-	fmt.Println(message);
+	fmt.Println(message);git 
 	// fmt.Printf("Hello, %s, nice to meet you!\n", username);
 }
