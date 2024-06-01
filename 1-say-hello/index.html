@@ -60,6 +60,7 @@
       const num = Math.floor(Math.random() * greetings.length);
       let name = username.value;
       output.innerHTML = `${greetings[num]}, ${name}, nice to meet you!`;
+      username.value = "";
     }
     function handleInput(e) {
       if (e.target.value === "") {

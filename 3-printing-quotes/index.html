@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Printing Quotes</title>
+    <style>
+      body {
+        background-color: rgb(20, 19, 19);
+        color: whitesmoke;
+      }
+      h1 {
+        text-align: center;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        margin: 10px;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Printing Quotes</h1>
+    <form id="form" class="container">
+      <div class="container-item">
+        <label for="quote">What is the quote? </label>
+        <input type="text" id="quote" />
+      </div>
+      <div class="container-item">
+        <label for="quoter">Who said it? </label>
+        <input type="text" id="quoter" />
+      </div>
+      <input type="submit" value="Submit" />
+      <p id="output"></p>
+    </form>
+  </body>
+  <script>
+    const form = document.querySelector("#form");
+    const quote = document.querySelector("#quote");
+    const quoter = document.querySelector("#quoter");
+    const output = document.querySelector("#output");
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      console.log(quote.value);
+      console.log(quoter.value);
+      const display = `${quoter.value} says, "${quote.value}".`;
+      output.innerHTML = display;
+    }
+
+    form.addEventListener("submit", handleSubmit);
+  </script>
+</html>
