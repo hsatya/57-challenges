@@ -1,0 +1,9 @@
+<div>
+  <label for="name">What is your name?</label><br />
+  <input type="text" id="name" [(ngModel)]="name" />
+  <button (click)="sayHello()">Greet</button>
+</div>
+
+<div *ngIf="greeting">
+  <p>{{ greeting }}</p>
+</div>
